@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>toprint.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+p,h3,li,pre,code{
+	font-size: 1.4rem;
+	line-height: 1.4;
+}
+</style>
+
+</head>
+<body>
+<h2 id="web-video-text-track-webvtt-quick-review">Web Video Text Track (WebVTT) quick review:</h2>
+<ul>
+<li>
+<p>The W3C Web Media Text Tracks community Group [https://www.w3.org/community/texttracks/] <strong>working</strong> on the &quot;WebVTT: The Web video Text Tracks Format [http://dev.w3.org/htmnl5/webvtt/] <strong>specification (a format used for defining files that will contain text for captions and subtitles,...etc.</strong></p>
+</li>
+<li>
+<p>The WebVTT files are used with the src attribute of the <code>&lt;track&gt;</code> elemenmt, tyhat can be used inside a <code>&lt;video&gt;</code>...<code>&lt;/video&gt;</code> .</p>
+</li>
+<li>
+<p>The MIME type of WebVTT is <strong>text/vtt</strong>.</p>
+</li>
+<li>
+<p>A WebVTT file (.vtt) contains cues, which can be either a single line or multiple lines, as shown below:</p>
+<ul>
+<li>Example of vtt file:</li>
+</ul>
+<pre class="hljs"><code><div> WEBVTT
+ 00:01.000 --&gt; 00:04.000
+ Never drink liquid nitrogen.
+
+ 00:05.000 --&gt; 00:09.000
+ - It will perforate your stomach.
+ - You could die.
+
+
+</div></code></pre>
+</li>
+<li>
+<p>You can style WebVTT cues by looking for elements which match the ::cue pseudo-element.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">video</span><span class="hljs-selector-pseudo">::cue</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom,
+   dimgray, lightgray);
+  <span class="hljs-attribute">color</span>: papayawhip;
+}
+
+<span class="hljs-selector-tag">video</span><span class="hljs-selector-pseudo">::cue(b)</span> {
+  <span class="hljs-attribute">color</span>: peachpuff;
+}
+</div></code></pre>
+<ul>
+<li>You can also define your style inside the WebVTT file directly by inserting CSS rules into the file with each rule preceded by the string &quot;STYLE&quot; all by itself on a lilne of text:</li>
+</ul>
+<pre class="hljs"><code><div>WEBVTT
+
+STYLE
+::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  color: papayawhip;
+}
+/* Style blocks cannot use blank lines nor "dash dash 
+greater than" */
+
+NOTE comment blocks can be used between style blocks.
+
+STYLE
+::cue(b) {
+  color: peachpuff;
+}
+
+00:00:00.000 --&gt; 00:00:10.000
+- Hello <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>world<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>.
+
+NOTE style blocks cannot appear after 
+the first cue.
+</div></code></pre>
+<ul>
+<li><strong>A cue</strong> is a single subtitle block that has a single start time, end time, and textual payload. Example 6 consists of the header, a blank line, and then five cues separated by blank lines. A cue consists of five components:</li>
+</ul>
+<p>An optional cue identifier followed by a newline.
+Cue timings.
+Optional cue settings with at least one space before the first and between each setting.
+One or more newlines.
+The cue payload text.</p>
+<blockquote>
+<p>Example 7 - Example of a cue</p>
+</blockquote>
+<pre class="hljs"><code><div>1 - Title Crawl
+00:00:05.000 --&gt; 00:00:10.000 line:0 position:20%
+     size:60% align:start
+
+Some time ago in a place rather distant....
+</div></code></pre>
+<blockquote>
+<h4 id="continue-httpsdevelopermozillaorgen-usdocswebapiwebvttapi">Continue =&gt; https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API</h4>
+</blockquote>
+<blockquote>
+<p>for comperhensive ref: https://www.w3.org/TR/webvtt1/#webvtt-file</p>
+</blockquote>
+<blockquote>
+<p>also: <strong>https://codepen.io/farisubuntu/pen/pozNwrL</strong></p>
+</blockquote>
+<hr>
+<h3 id="html5-media---review">HTML5 media - review:</h3>
+<ul>
+<li>Consider this HTML file:</li>
+</ul>
+<pre class="hljs"><code><div>
+  <span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span> <span class="hljs-attr">autoplay</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"your_video.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">default</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"captions"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"en"</span> 
+      <span class="hljs-attr">label</span>=<span class="hljs-string">"English"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"your_caption_file.vtt"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>The <code>&lt;track&gt;</code> tag is sort of like a script that &quot;plays&quot; along with the video. We can use multiple tracks in the same video element. The <code>default</code> attribute indicates that a the track will be enabled automatically.</p>
+<p>Let's run down all the <code>&lt;track&gt;</code> attributes while we're at it:</p>
+<ul>
+<li><code>srclang</code> indicates what language the track is in. <em>(equal to the TextTrack.langauge property)</em></li>
+<li><code>kind</code> represents the <b>type of track</b> it is and there are five kinds:
+<ul>
+<li><code>subtitles</code> are usually <b>translations and descriptions</b> of different parts of a video. (hint: if the sound is muted)</li>
+<li><code>descriptions</code> help <b>unsighted</b> users understand what is happening in a video.</li>
+<li><code>captions</code> provide <b>un-hearing</b> users an alternative to audio.</li>
+<li><code>metadata</code> is a track that is used by scripts and cannot be seen by users.</li>
+<li><code>chapters</code> assist in <b>navigating</b> video content.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note: if 'kind' not present/omitted then equal='subtitles' and if if its value is Invalid then equal 'metadata'.</p>
+</blockquote>
+<ul>
+<li><code>label</code> is a title for the text track that appears in the caption track</li>
+<li><code>src</code> is the source file for the track. It cannot come from a cross-origin source unless <code>crossorigin</code> is specified.</li>
+</ul>
+<p>While WebVTT is designed specifically for video, you can still use it with audio by placing an audio file within a <code>&lt;video&gt;</code> element.</p>
+<ul>
+<li>The track element CAN NOT be used with a <em>file://URL</em>; instead use http:// and a web server.</li>
+<li>Your server must use a special MIME format for the .vtrt files: <strong>text/vtt;charset=utf-8</strong></li>
+</ul>
+<blockquote>
+<p>continue
+<strong>[css-tricks/imporoving-video-accessibility-with-webvtt/]</strong></p>
+</blockquote>
+<h3 id="tools">Tools:</h3>
+<ul>
+<li>linux:
+<ul>
+<li>gnome-subtitles</li>
+<li>
+<hr>
+</li>
+<li>handbrake</li>
+<li>super
+-js library for converting to the WebVTT  format on the fly:
+<a>JS_videosub [http://www.storiesinflight.com/js_videosub/]</li>
+
+</ul>
+</li>
+</ul>
+
+<h1>Tools:
+</h1>
+
+
+
+</body>
+</html>

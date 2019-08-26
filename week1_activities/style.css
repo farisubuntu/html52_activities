@@ -1,0 +1,17 @@
+#playerWindow {
+    border:1px solid;
+    height:auto;
+    padding: 20px;
+    margin-top:10px;
+    margin-right: 33px;
+    
+    /* display: inline-block; */
+  float: left;
+  
+  }
+  
+  #myVideo{
+margin-right: 20px;
+float:right;
+  }
+  
